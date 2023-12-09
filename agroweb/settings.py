@@ -22,6 +22,10 @@ API_KEY = os.getenv('API_KEY')
 DB_NAME = os.getenv('DB_NAME')
 DB_USER = os.getenv('DB_USER')
 DB_PASSWORD = os.getenv('DB_PASSWORD')
+CORREO = os.getenv('CORREO')
+CONTRASENA = os.getenv('CONTRASENA')
+ACCOUNT_SID = os.getenv('ACCOUNT_SID')
+AUTH_TOKEN=os.getenv('AUTH_TOKEN')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
