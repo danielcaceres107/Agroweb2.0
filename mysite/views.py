@@ -23,7 +23,6 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.mime.application import MIMEApplication
-from decouple import config
 from django.utils.crypto import get_random_string
 from django.core.cache import cache
 from django.contrib import messages
@@ -35,13 +34,14 @@ from datetime import datetime
 from django.db.models import Sum
 import time
 from twilio.rest import Client
-from decouple import config
+from dotenv import load_dotenv
 
 
 # Cargar las variables de entorno desde el archivo .env // el archivo .env no se sube a github
-CORREO = config('CORREO')
-CONTRASENA = config('CONTRASENA')
+load_dotenv()
 
+CORREO = os.getenv('CORREO')
+CONTRASENA = os.getenv('CONTRASENA')
 
 
 def index(request):
@@ -235,8 +235,8 @@ def enviar_carrito(request):
 
     return redirect('mapa')
 
-account_sid = config('ACCOUNT_SID')
-auth_token=config('AUTH_TOKEN')
+account_sid = os.getenv('ACCOUNT_SID')
+auth_token=os.getenv('AUTH_TOKEN')
 
 def sms_carrito(telefono, account_sid, auth_token) :
     print("Enviando sms del SICC...")
