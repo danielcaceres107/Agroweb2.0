@@ -11,15 +11,17 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-from decouple import config
+from dotenv import load_dotenv
 import os
 
 # Cargar las variables de entorno desde el archivo .env // el archivo .env no se sube a github
-PRODUCTION_SECRET_KEY= config('PRODUCTION_SECRET_KEY')
-API_KEY = config('API_KEY')
-DB_NAME = config('DB_NAME')
-DB_USER = config('DB_USER')
-DB_PASSWORD = config('DB_PASSWORD')
+load_dotenv()
+
+PRODUCTION_SECRET_KEY= os.getenv('PRODUCTION_SECRET_KEY')
+API_KEY = os.getenv('API_KEY')
+DB_NAME = os.getenv('DB_NAME')
+DB_USER = os.getenv('DB_USER')
+DB_PASSWORD = os.getenv('DB_PASSWORD')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
