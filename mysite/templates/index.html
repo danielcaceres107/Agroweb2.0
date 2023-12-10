@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load static %}
 <section class="info">
 
     <img src="../../static/media/img/bghojas2.png" class="info-img" alt="">
@@ -35,7 +36,7 @@
             </div>
 
             <div class="info-1">
-                <img src="../../static/media/img/lacteos.png" alt="">
+                <img src="{% static 'img/lacteos.png' %}" alt="">
                 <h3>La mejor calidad</h3>
                 <p>
                     Productos de la mas alta calidad sin intermediarios
